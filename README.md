@@ -1,2 +1,66 @@
-# Zotero-CSL-Quick-Editor
-The Zotero CSL Quick Editor is a plugin designed specifically for Zotero 7, aimed at lowering the barrier to writing CSL (Citation Style Language).
+# Zotero CSL Quick Editor (Zotero 引用格式快速可视化编辑器)
+
+![Zotero Version](https://img.shields.io/badge/Zotero-7%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Status](https://img.shields.io/badge/Status-Alpha-orange)
+
+**让修改参考文献格式像编辑 Word 文档一样简单。**
+
+Zotero CSL Quick Editor 是一个专为 **Zotero 7** 设计的插件，旨在降低 CSL (Citation Style Language) 的编写门槛。用户无需了解复杂的 XML 语法，即可通过可视化界面快速调整引用样式，并使用库中真实的文献进行实时预览。
+
+> 🚧 **注意**：本项目目前处于早期开发阶段 (MVP)，欢迎提交 Issue 或 Pull Request 参与共建！
+
+![](https://img.cdn1.vip/i/6930f27fc94bd_1764815487.webp)
+---
+
+## ✨ 核心功能 (Features)
+
+- **所见即所得 (WYSIWYG)**：无需编写代码，通过勾选框和按钮修改格式。
+- **真实数据预览**：不同于在线编辑器的假文预览，本插件直接读取你在 Zotero 中选中的条目生成预览，确保格式百分百符合你的需求。
+- **快速修正 (Quick Fix)**：
+  - 一键设置作者加粗 (Bold)。
+  - 一键隐藏/显示 DOI、URL、ISBN。
+  - 快速调整 "et al." (等) 的出现规则。
+- **无缝集成**：修改完成后，自动生成新的样式并应用到 Zotero，无需手动导出导入 `.csl` 文件。
+
+
+## 📥 安装指南 (Installation)
+
+### 方式一：下载安装包 (推荐)
+1. 前往 [Releases](../../releases) 页面下载最新的 `.xpi` 文件。
+2. 打开 Zotero，点击菜单栏 `工具` -> `附加组件` (Add-ons)。
+3. 点击右上角齿轮图标 ⚙️ -> `Install Add-on From File...`。
+4. 选择下载的 `.xpi` 文件，安装并重启 Zotero。
+
+### 方式二：源码编译
+如果你想体验最新开发版或参与贡献：
+
+```bash
+# 1. 克隆仓库
+git clone https://github.com/your-username/zotero-csl-quick-editor.git
+
+# 2. 安装依赖
+npm install
+
+# 3. 编译插件 (生成 .xpi 文件)
+npm run build
+
+# 4. 或者是开发模式 (热重载)
+npm start
+```
+---
+## 🚀 使用方法 (Usage)
+1.在 Zotero 主界面中，选中 1-3 个你想要预览引用的文献条目。
+2.点击菜单栏 工具 -> Open CSL Editor (或者工具栏图标)。
+3.在弹出的编辑器窗口左侧调整设置（如：勾选 "Bold Authors"）。
+4.右侧窗口将实时显示修改后的参考文献格式。
+5.满意后点击 Save & Apply，插件会自动保存并切换到新样式。
+
+## 🛠️ 技术栈 (Tech Stack)
+Core: Zotero 7 API (Mozilla Firefox 115 ESR based)
+Language: JavaScript (ES6+)
+UI: HTML5, CSS3 (Flexbox/Grid), Standard XUL elements (minimal)
+Data: XML DOM Parser, CSL (Citation Style Language)
+
+## 📄 许可证 (License)
+本项目基于 MIT 许可证开源 - 详见 LICENSE 文件。
